@@ -7,10 +7,6 @@ import Search from "../Components/Search";
 import BookDetails from "../Components/BookDetails";
 
 function App() {
-  // const history = useHistory();
-  // const redirectToLogin = () => {
-  //   history.push("/");
-  // };
 
   return (
     <div className="App">
