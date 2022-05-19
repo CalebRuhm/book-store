@@ -1,11 +1,16 @@
 import "../Styles/App.scss";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useHistory } from "react-router-dom";
 import NavBar from "../Components/NavBar";
 import Login from "../Components/Login";
 import BookShelf from "../Components/BookShelf";
 import Search from "../Components/Search";
 
 function App() {
+  // const history = useHistory();
+  // const redirectToLogin = () => {
+  //   history.push("/");
+  // };
+
   return (
     <div className="App">
       <NavBar />
@@ -18,7 +23,7 @@ function App() {
             element={<BookShelf />}
             component={BookShelf}
           />
-          <Route path="/search" element={<Search />} component={Search} />
+          <Route exact path="/search" element={<Search />} component={Search} />
         </Routes>
       </div>
     </div>
