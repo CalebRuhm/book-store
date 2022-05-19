@@ -1,0 +1,57 @@
+@import "master";
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $purple;
+  height: 10vh;
+
+  .container {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .bookShelf {
+      background: none;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.25em;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s ease;
+
+      &:hover {
+        transform: scale(1.075);
+        transition: 0.3s ease;
+      }
+
+      .bookIcon {
+        font-size: 1.25em;
+        padding-right: 5px;
+      }
+    }
+
+    .search {
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.25em;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      background: none;
+
+      .searchIcon {
+        font-size: 1.25em;
+        padding-left: 5px;
+      }
+    }
+  }
+}
