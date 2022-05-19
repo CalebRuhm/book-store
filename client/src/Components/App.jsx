@@ -4,6 +4,7 @@ import NavBar from "../Components/NavBar";
 import Login from "../Components/Login";
 import BookShelf from "../Components/BookShelf";
 import Search from "../Components/Search";
+import BookDetails from "../Components/BookDetails";
 
 function App() {
   // const history = useHistory();
@@ -18,12 +19,16 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Login />} component={Login} />
           <Route
-            exact
-            path="/book-shelf"
+            exact path="/book-shelf"
             element={<BookShelf />}
             component={BookShelf}
           />
           <Route exact path="/search" element={<Search />} component={Search} />
+          <Route
+            exact path="/book"
+            element={<BookDetails />}
+            component={BookDetails}
+          />
         </Routes>
       </div>
     </div>
