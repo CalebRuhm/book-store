@@ -1,10 +1,11 @@
 import "../Styles/Login.scss";
 import React from "react";
+import { loginStore } from "../Stores/loginStore";
 
 export default function Login() {
-  const onSubmit = (e) => {
-    e.preventDefault();
-  };
+  const { onSubmit, onChangeHandlerUser, onChangeHandlerPass } = loginStore(
+    (state) => state
+  );
 
   return (
     <div className="login">
@@ -15,9 +16,17 @@ export default function Login() {
         }}
       >
         <label htmlFor="username">Username:</label>
-        <input type="text" name="username"></input>
+        <input
+          type="text"
+          name="username"
+          onChange={(e) => onChangeHandlerUser(e)}
+        ></input>
         <label htmlFor="password">Password:</label>
-        <input type="password" name="password"></input>
+        <input
+          type="password"
+          name="password"
+          onChange={(e) => onChangeHandlerPass(e)}
+        ></input>
       </form>
       <button className="btn">Login</button>
     </div>
