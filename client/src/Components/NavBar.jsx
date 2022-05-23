@@ -18,7 +18,7 @@ export default function Navbar() {
           <FontAwesomeIcon icon={faBook} className="bookIcon" />
           My Bookshelf
         </button>
-        <button className="search">
+        <button className="search" onClick={() => navigate("/search")}>
           Search
           <FontAwesomeIcon icon={faMagnifyingGlass} className="searchIcon" />
         </button>
