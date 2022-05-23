@@ -10,13 +10,13 @@ export default function Login() {
     <div className="login">
       <form
         className="form"
-        onsubmit={(e) => {
+        onSubmit={(e) => {
           onSubmit(e);
         }}
       >
-        <label for="username">Username:</label>
+        <label htmlFor="username">Username:</label>
         <input type="text" name="username"></input>
-        <label for="password">Password:</label>
+        <label htmlFor="password">Password:</label>
         <input type="password" name="password"></input>
       </form>
       <button className="btn">Login</button>
