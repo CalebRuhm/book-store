@@ -7,14 +7,12 @@ export const loginStore = create((set) => ({
     e.preventDefault();
   },
   onChangeHandlerUser: (e) => {
-    const data = e.target.value;
-    set({ usernameData: data });
+    set({ usernameInput: e.target.value });
   },
   onChangeHandlerPass: (e) => {
-    const data = e.target.value;
-    set({ passwordData: data });
+    set({ passwordInput: e.target.value });
   },
   onClick: () => {
-    console.log("Login Click")
-  }
+    console.log("Login Click");
+  },
 }));

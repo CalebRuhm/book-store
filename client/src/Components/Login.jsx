@@ -3,9 +3,11 @@ import React from "react";
 import { loginStore } from "../Stores/loginStore";
 
 export default function Login() {
-  const { onSubmit, onChangeHandlerUser, onChangeHandlerPass, onClick } = loginStore(
+  const { onSubmit, onChangeHandlerUser, onChangeHandlerPass, onClick, usernameInput, passwordInput } = loginStore(
     (state) => state
   );
+  console.log(usernameInput);
+  console.log(passwordInput);
 
   return (
     <div className="login">
