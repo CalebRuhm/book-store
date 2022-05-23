@@ -3,7 +3,7 @@ import React from "react";
 import { loginStore } from "../Stores/loginStore";
 
 export default function Login() {
-  const { onSubmit, onChangeHandlerUser, onChangeHandlerPass } = loginStore(
+  const { onSubmit, onChangeHandlerUser, onChangeHandlerPass, onClick } = loginStore(
     (state) => state
   );
 
@@ -28,7 +28,7 @@ export default function Login() {
           onChange={(e) => onChangeHandlerPass(e)}
         ></input>
       </form>
-      <button className="btn">Login</button>
+      <button className="btn" onClick={onClick}>Login</button>
     </div>
   );
 }

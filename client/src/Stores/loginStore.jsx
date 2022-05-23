@@ -14,4 +14,7 @@ export const loginStore = create((set) => ({
     const data = e.target.value;
     set({ passwordData: data });
   },
+  onClick: () => {
+    console.log("Login Click")
+  }
 }));
