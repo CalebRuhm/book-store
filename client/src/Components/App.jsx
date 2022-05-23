@@ -5,6 +5,7 @@ import BookShelf from "../Components/BookShelf";
 import Search from "../Components/Search";
 import BookDetails from "../Components/BookDetails";
 import PageNotFound from "../Components/PageNotFound";
+import ProtectedRoute from "../Components/ProtectedRoute";
 
 function App() {
   return (
@@ -12,20 +13,32 @@ function App() {
       <div className="Content">
         <Routes>
           <Route exact path="/" element={<Login />} component={Login} />
-          <Route
-            exact
-            path="/book-shelf"
-            element={<BookShelf />}
-            component={BookShelf}
-          />
-          <Route exact path="/search" element={<Search />} component={Search} />
-          <Route
-            exact
-            path="/book/:bookId"
-            element={<BookDetails />}
-            component={BookDetails}
-          />
-          <Route exact path="*" element={<PageNotFound />} component={PageNotFound} />
+          <Route element={<ProtectedRoute />}>
+            <Route
+              exact
+              path="/book-shelf"
+              element={<BookShelf />}
+              component={BookShelf}
+            />
+            <Route
+              exact
+              path="/search"
+              element={<Search />}
+              component={Search}
+            />
+            <Route
+              exact
+              path="/book/:bookId"
+              element={<BookDetails />}
+              component={BookDetails}
+            />
+            <Route
+              exact
+              path="*"
+              element={<PageNotFound />}
+              component={PageNotFound}
+            />
+          </Route>
         </Routes>
       </div>
     </div>

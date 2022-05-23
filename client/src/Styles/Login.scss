@@ -7,8 +7,8 @@
   flex-direction: column;
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 40%;
+  transform: translate(-50%, -40%);
 
   .form {
     display: flex;
@@ -21,6 +21,7 @@
     label {
       color: #fff;
       font-size: 1.5em;
+      letter-spacing: 0.05em;
       padding: 0.5em 0.5em 0.5em 0em;
     }
 

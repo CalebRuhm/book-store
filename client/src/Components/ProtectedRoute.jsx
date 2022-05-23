@@ -1,8 +1,12 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
+import Login from "./Login";
+const useAuth = () => {
+  const user = { loggedIn: false };
+  return user && user.loggedIn;
+};
 
 export default function ProtectedRoute() {
-  return (
-    <div className="login">
-    </div>
-  );
+  const isAuth = useAuth();
+  return isAuth ? <Outlet /> : <Login />
 }
