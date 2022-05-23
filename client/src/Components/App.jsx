@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/search" element={<Search />} component={Search} />
           <Route
             exact
-            path="/book"
+            path="/book/:bookId"
             element={<BookDetails />}
             component={BookDetails}
           />
