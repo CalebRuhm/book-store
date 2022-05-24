@@ -1,8 +1,11 @@
 import "../Styles/BookShelf.scss";
 import NavBar from "../Components/NavBar";
-import React from "react";
+import { bookStore } from "../Stores/bookStore";
 
 export default function BookShelf() {
+
+  const {} = bookStore((state) => state)
+
   return (
     <>
       <NavBar />
