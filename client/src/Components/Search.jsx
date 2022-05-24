@@ -19,6 +19,9 @@ export default function Search() {
           placeholder="Harry Potter and the Prisoner of Azkaban"
         ></input>
       </div>
+      <div className="results">
+        Results
+      </div>
     </>
   );
 }
