@@ -1,7 +1,7 @@
 import "../Styles/Search.scss";
 import NavBar from "../Components/NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faBook } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { searchStore } from "../Stores/searchStore";
 
 export default function Search() {
@@ -9,7 +9,8 @@ export default function Search() {
     (state) => state
   );
 
-  const books = response;
+  const data = response;
+  console.log(data);
 
   return (
     <>
@@ -28,14 +29,6 @@ export default function Search() {
       </div>
 
       <div className="results">
-        {books.map((bookInfo, idx) => {
-          return (
-            <div className="bookInfo" key={bookInfo.id}>
-              <h1>{bookInfo}</h1>
-              <p>{idx}</p>
-            </div>
-          );
-        })}
       </div>
     </>
   );
