@@ -1,12 +1,9 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import Login from "./Login";
-const useAuth = () => {
-  const user = { loggedIn: false };
-  return user && user.loggedIn;
-};
+import BookShelf from "../Components/BookShelf";
+import { loginStore } from "../Stores/loginStore";
 
 export default function ProtectedRoute() {
-  const isAuth = useAuth();
-  return isAuth ? <Outlet /> : <Login />
+  const { token } = loginStore((state) => state);
+  return token ? <BookShelf /> : <Login />;
 }

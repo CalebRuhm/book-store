@@ -3,11 +3,17 @@ import React from "react";
 import { loginStore } from "../Stores/loginStore";
 
 export default function Login() {
-  const { onSubmit, onChangeHandlerUser, onChangeHandlerPass, onClick, usernameInput, passwordInput } = loginStore(
-    (state) => state
-  );
-  console.log(usernameInput);
-  console.log(passwordInput);
+  const {
+    onSubmit,
+    onChangeHandlerUser,
+    onChangeHandlerPass,
+    onClick,
+    usernameInput,
+    passwordInput,
+    token
+  } = loginStore((state) => state);
+
+  console.log(token);
 
   return (
     <div className="login">
@@ -30,7 +36,12 @@ export default function Login() {
           onChange={(e) => onChangeHandlerPass(e)}
         ></input>
       </form>
-      <button className="btn" onClick={onClick}>Login</button>
+      <button
+        className="btn"
+        onClick={() => onClick(usernameInput, passwordInput)}
+      >
+        Login
+      </button>
     </div>
   );
 }
