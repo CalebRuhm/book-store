@@ -28,6 +28,5 @@ export const loginStore = create((set) => ({
     set({ token: response.data.token });
     const newToken = response.data.token;
     localStorage.setItem("token", newToken);
-    console.log(response.data)
   },
 }));

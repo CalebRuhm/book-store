@@ -1,6 +1,7 @@
 import "../Styles/Login.scss";
 import React from "react";
 import { loginStore } from "../Stores/loginStore";
+import BookShelf from "../Components/BookShelf";
 
 export default function Login() {
   const {
@@ -10,12 +11,12 @@ export default function Login() {
     onClick,
     usernameInput,
     passwordInput,
-    token
+    token,
   } = loginStore((state) => state);
 
-  console.log(token);
-
-  return (
+  return token ? (
+    <BookShelf />
+  ) : (
     <div className="login">
       <form
         className="form"

@@ -10,8 +10,8 @@ export default function PageNotFound() {
     <div className="container">
       <div className="info">
         <h1>Sorry! The page '{location.pathname} ' doesn't exist.</h1>
-        <Link className="link" to="/">
-          Back to Login
+        <Link className="link" to="/book-shelf">
+          Back to Bookshelf
         </Link>
         <img src={sad} alt="" className="img" />
       </div>
