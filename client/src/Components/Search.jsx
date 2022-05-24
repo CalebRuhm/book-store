@@ -5,9 +5,12 @@ import { faMagnifyingGlass, faBook } from "@fortawesome/free-solid-svg-icons";
 import { searchStore } from "../Stores/searchStore";
 
 export default function Search() {
-  const { handleSearch, handleChange, searchData, response } =
-    searchStore((state) => state);
-  console.log(response);
+  const { handleSearch, handleChange, searchData, response } = searchStore(
+    (state) => state
+  );
+
+  const books = response;
+
   return (
     <>
       <NavBar />
@@ -23,8 +26,16 @@ export default function Search() {
           placeholder="Harry Potter and the Prisoner of Azkaban"
         ></input>
       </div>
+
       <div className="results">
-        Results
+        {books.map((bookInfo, idx) => {
+          return (
+            <div className="bookInfo" key={bookInfo.id}>
+              <h1>{bookInfo}</h1>
+              <p>{idx}</p>
+            </div>
+          );
+        })}
       </div>
     </>
   );

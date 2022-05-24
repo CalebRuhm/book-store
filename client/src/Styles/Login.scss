@@ -38,7 +38,7 @@
   }
 
   .btn {
-    margin-top: -3em;
+    // margin-top: -3em;
     width: 6em;
     height: 3em;
     background-color: $blue;
@@ -52,7 +52,7 @@
 
     &:hover {
       transform: scale(1.1);
-      background-color: $purple;
+      background-color: $green;
       transition: 0.2s ease;
     }
   }

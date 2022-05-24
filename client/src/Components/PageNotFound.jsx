@@ -1,5 +1,5 @@
 import "../Styles/PageNotFound.scss";
-import React from "react";
+import NavBar from "../Components/NavBar";
 import { Link, useLocation } from "react-router-dom";
 import sad from "../img/sad.png";
 
@@ -7,6 +7,8 @@ export default function PageNotFound() {
   const location = useLocation();
 
   return (
+    <>
+    <NavBar />
     <div className="container">
       <div className="info">
         <h1>Sorry! The page '{location.pathname} ' doesn't exist.</h1>
@@ -16,5 +18,6 @@ export default function PageNotFound() {
         <img src={sad} alt="" className="img" />
       </div>
     </div>
+    </>
   );
 }
