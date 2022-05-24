@@ -6,7 +6,7 @@ export default function BookShelf() {
   return (
     <>
       <NavBar />
-      <div>BookShelf</div>
+      <div className="shelf">BookShelf</div>
     </>
   );
 }
