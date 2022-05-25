@@ -32,7 +32,13 @@ export default function Search() {
 
       <div className="results"></div>
       {data && data.map((newData, idx) => (
-        <h1 key={idx} className="">{newData.authors}</h1>
+        <div key={newData.id} className="book">
+          <img src={newData.imageLinks.smallThumbnail} alt={newData.imageLinks.smallThumbnail}></img>
+          <h1 className="title">{newData.title}</h1>
+          <h2 className="title">{newData.subtitle}</h2>
+          <p className="author">{newData.authors}</p>
+          <p className="desc">{newData.description}</p>
+        </div>
       ))}
     </>
   );
