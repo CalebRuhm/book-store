@@ -1,10 +1,12 @@
 import "../Styles/Search.scss";
 import NavBar from "../Components/NavBar";
+import { useTitle } from "../Components/useTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { searchStore } from "../Stores/searchStore";
 
 export default function Search() {
+  useTitle(`Caleb's Book Store - Search`);
   const { handleSearch, handleChange, searchData, response } = searchStore(
     (state) => state
   );
@@ -28,8 +30,7 @@ export default function Search() {
         ></input>
       </div>
 
-      <div className="results">
-      </div>
+      <div className="results"></div>
     </>
   );
 }

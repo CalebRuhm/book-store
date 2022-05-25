@@ -2,8 +2,11 @@ import "../Styles/Login.scss";
 import React from "react";
 import { loginStore } from "../Stores/loginStore";
 import BookShelf from "../Components/BookShelf";
+import { useTitle } from "../Components/useTitle";
 
 export default function Login() {
+  useTitle(`Caleb's Book Store - Login`)
+
   const {
     onSubmit,
     onChangeHandlerUser,
