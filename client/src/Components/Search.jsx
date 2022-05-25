@@ -31,6 +31,9 @@ export default function Search() {
       </div>
 
       <div className="results"></div>
+      {data && data.map((newData, idx) => (
+        <h1 key={idx} className="">{newData.authors}</h1>
+      ))}
     </>
   );
 }
