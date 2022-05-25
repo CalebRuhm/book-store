@@ -31,12 +31,15 @@ export default function Login() {
         <input
           type="text"
           name="username"
+          value={usernameInput}
           onChange={(e) => onChangeHandlerUser(e)}
+          // onBlur={}
         ></input>
         <label htmlFor="password">Password:</label>
         <input
           type="password"
           name="password"
+          value={passwordInput}
           onChange={(e) => onChangeHandlerPass(e)}
         ></input>
       </form>
