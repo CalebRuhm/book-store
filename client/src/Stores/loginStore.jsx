@@ -8,10 +8,10 @@ export const loginStore = create((set) => ({
   onSubmit: (e) => {
     e.preventDefault();
   },
-  onChangeHandlerUser: (e) => {
+  onChangeUser: (e) => {
     set({ usernameInput: e.target.value });
   },
-  onChangeHandlerPass: (e) => {
+  onChangePass: (e) => {
     set({ passwordInput: e.target.value });
   },
   onClick: async (usernameInput, passwordInput) => {

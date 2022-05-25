@@ -9,8 +9,8 @@ export default function Login() {
 
   const {
     onSubmit,
-    onChangeHandlerUser,
-    onChangeHandlerPass,
+    onChangeUser,
+    onChangePass,
     onClick,
     usernameInput,
     passwordInput,
@@ -32,7 +32,7 @@ export default function Login() {
           type="text"
           name="username"
           value={usernameInput}
-          onChange={(e) => onChangeHandlerUser(e)}
+          onChange={(e) => onChangeUser(e)}
           // onBlur={}
         ></input>
         <label htmlFor="password">Password:</label>
@@ -40,7 +40,7 @@ export default function Login() {
           type="password"
           name="password"
           value={passwordInput}
-          onChange={(e) => onChangeHandlerPass(e)}
+          onChange={(e) => onChangePass(e)}
         ></input>
       </form>
       <button
