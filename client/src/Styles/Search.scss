@@ -38,9 +38,40 @@
 .results {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
   height: 100%;
-  overflow: hidden;
   color: white;
+  padding: 0em, 2em;
+
+  .book {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 2em;
+
+    img {
+      margin: 2em;
+    }
+  }
+
+  .title {
+    font-size: 1.75em;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $yellow;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.4em;
+  }
+
+  .bookInfo {
+    .author {
+      font-style: italic;
+    }
+  }
 }

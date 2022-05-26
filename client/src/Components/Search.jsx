@@ -4,6 +4,7 @@ import { useTitle } from "../Components/useTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { searchStore } from "../Stores/searchStore";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Search() {
   useTitle(`Caleb's Book Store - Search`);
@@ -30,23 +31,26 @@ export default function Search() {
         ></input>
       </div>
 
-      <div className="results"></div>
-      {data &&
-        data.map((newData, idx) => (
-          <div key={newData.id} className="book">
-            <img
-              src={newData.imageLinks.thumbnail}
-              alt={newData.imageLinks.thumbnail}
-            ></img>
-            <div className="bookInfo">
-              <h1 className="title">{newData.title}</h1>
-              <h2 className="title">{newData.subtitle}</h2>
-              <p className="author">{newData.authors}</p>
-              <p className="desc">{newData.description}</p>
-              <p>{newData.id}</p>
+      <div className="results">
+        {data &&
+          data.map((newData, idx) => (
+            <div key={newData.id} className="book">
+              {newData.imageLinks.thumbnail && (
+                <img
+                  src={newData.imageLinks.thumbnail}
+                  alt={newData.title}
+                ></img>
+              )}
+              <div className="bookInfo">
+                <Link className="title" to="/book/:bookId">{newData.title}</Link>
+                <h2 className="subtitle">{newData.subtitle}</h2>
+                <p className="author">{newData.authors}</p>
+                <p className="desc">{newData.description}</p>
+                <p>{newData.id}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+      </div>
     </>
   );
 }
