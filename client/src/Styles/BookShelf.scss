@@ -9,8 +9,7 @@
   }
 
   .book {
-    display: flex;
-    align-items: center;
+    @include flexCenter();
     flex-direction: row;
     padding: 2em;
 
@@ -37,9 +36,9 @@
     font-style: italic;
 
     p {
-        padding-right: 0.5em;
+      padding-right: 0.5em;
     }
-}
+  }
 
   .subtitle {
     font-size: 1.4em;
@@ -63,5 +62,4 @@
       outline: 0.2em solid $yellow;
     }
   }
-
 }

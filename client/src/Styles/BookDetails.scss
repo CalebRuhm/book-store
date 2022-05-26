@@ -1,15 +1,11 @@
 @import "master";
 
 .book {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter();
   color: #fff;
 
   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCenter();
     flex-direction: row;
     width: 85vw;
     margin: 2em;
@@ -37,9 +33,9 @@
 
     .info {
       padding-right: 1em;
-    
+
       p {
-          padding-right: 0.5em;
+        padding-right: 0.5em;
       }
     }
 

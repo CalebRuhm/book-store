@@ -1,9 +1,7 @@
 @import "master";
 
 .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter();
   background-color: $blue;
   height: 7.5vh;
 
@@ -15,11 +13,9 @@
     align-items: center;
 
     .bookShelf {
+      @include flexCenter();
       background: none;
       padding: 10px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-size: 1.25em;
       border: none;
       cursor: pointer;
@@ -40,10 +36,8 @@
     }
 
     .search {
+      @include flexCenter();
       padding: 10px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-size: 1.25em;
       border: none;
       cursor: pointer;

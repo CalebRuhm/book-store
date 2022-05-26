@@ -6,4 +6,10 @@ $lightgrey: #252525;
 $green: #4CAF50;
 $yellow: #f0c424;
 
-$Roboto: 'Roboto', sans-serif;;
+$Roboto: 'Roboto', sans-serif;
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

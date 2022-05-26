@@ -2,9 +2,7 @@
 
 .container {
   .info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCenter();
     flex-direction: column;
 
     h1 {

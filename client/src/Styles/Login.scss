@@ -1,9 +1,7 @@
 @import "master";
 
 .login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter();
   flex-direction: column;
   position: absolute;
   left: 50%;
@@ -38,7 +36,6 @@
   }
 
   .btn {
-    // margin-top: -3em;
     width: 6em;
     height: 3em;
     background-color: $blue;
