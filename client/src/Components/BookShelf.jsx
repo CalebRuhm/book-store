@@ -9,13 +9,13 @@ import { Link, useLocation } from "react-router-dom";
 export default function BookShelf() {
   useTitle(`Caleb's Book Store - Bookshelf`);
 
-  const { onClick, response, currentlyReading, wantToRead, read } =
+  const { onRender, response, currentlyReading, wantToRead, read } =
     bookShelfStore((state) => state);
   const { token } = loginStore((state) => state);
 
   useEffect(() => {
-    onClick(token);
-  }, [onClick, token]);
+    onRender(token);
+  }, [onRender, token]);
 
 ;
 

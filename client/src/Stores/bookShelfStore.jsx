@@ -6,7 +6,7 @@ export const bookShelfStore = create((set) => ({
   currentlyReading: [],
   wantToRead: [],
   read: [],
-  onClick: async (token) => {
+  onRender: async (token) => {
     const response = await axios(`/api/bookshelf`, {
       method: "GET",
       headers: {
