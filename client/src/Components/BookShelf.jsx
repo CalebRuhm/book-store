@@ -59,6 +59,7 @@ export default function BookShelf() {
                     <option value="wantToRead">Want to Read</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="read">Read</option>
+                    <option value="remove">Remove</option>
                   </select>
                 </form>
               </div>

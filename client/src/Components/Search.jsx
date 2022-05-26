@@ -4,6 +4,8 @@ import { useTitle } from "../Components/useTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { searchStore } from "../Stores/searchStore";
+import { addBookStore } from "../Stores/addBookStore";
+import {loginStore} from "../Stores/loginStore";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Search() {
@@ -11,10 +13,15 @@ export default function Search() {
   const { handleSearch, handleChange, searchData, response } = searchStore(
     (state) => state
   );
-
   const data = response;
-  console.log(data);
-  console.log(response);
+
+  const { selectData, selectResponse, handleSelect, handleSelectChange } =
+    addBookStore((state) => state);
+
+  const { token } = loginStore((state) => state);
+
+  console.log(selectData);
+  console.log(selectResponse);
 
   return (
     <>
@@ -59,14 +66,15 @@ export default function Search() {
                   </div>
                 )}
                 <p className="desc">{newData.description}</p>
-                <form onSubmit={null}>
+                <form onChange={() => handleSelectChange(selectData, newData.id, token)}>
                   <label htmlFor="bookShelf" />
                   <select
                     name="bookShelf"
                     id="bookShelf"
                     value={newData.shelf}
-                    onChange={null}
+                    onChange={(e) => handleSelect(e)}
                   >
+                    <option value="none">None</option>
                     <option value="wantToRead">Want to Read</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="read">Read</option>

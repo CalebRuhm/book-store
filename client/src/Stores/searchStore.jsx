@@ -12,7 +12,7 @@ export const searchStore = create((set) => ({
       method: "GET",
     });
     set({
-      response: response.data.books
+      response: response.data.books,
     });
   },
 }));
