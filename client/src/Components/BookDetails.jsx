@@ -20,7 +20,9 @@ export default function BookDetails() {
   return (
     <>
       <NavBar />
-      <div>BookDetails {bookId}</div>;
+      <div className="book">
+        <h1>{response.title}</h1>
+      </div>;
     </>
   );
 }
