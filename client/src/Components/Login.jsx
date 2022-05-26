@@ -5,7 +5,7 @@ import BookShelf from "../Components/BookShelf";
 import { useTitle } from "../Components/useTitle";
 
 export default function Login() {
-  useTitle(`Caleb's Book Store - Login`)
+  useTitle(`Caleb's Book Store - Login`);
 
   const {
     onSubmit,
