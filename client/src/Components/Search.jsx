@@ -6,7 +6,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { searchStore } from "../Stores/searchStore";
 import { addBookStore } from "../Stores/addBookStore";
 import {loginStore} from "../Stores/loginStore";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Search() {
   useTitle(`Caleb's Book Store - Search`);
@@ -66,7 +66,8 @@ export default function Search() {
                   </div>
                 )}
                 <p className="desc">{newData.description}</p>
-                <form onSubmit={() => handleSelectChange(selectData, newData.id, token)}>
+                <form>
+                {/* <form onSubmit={(e) => handleSelectChange(selectData, newData.id, token)}> */}
                   <label htmlFor="bookShelf" />
                   <select
                     name="bookShelf"
