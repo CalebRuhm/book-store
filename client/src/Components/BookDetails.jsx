@@ -7,6 +7,7 @@ import { loginStore } from "../Stores/loginStore";
 import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useTitle } from "../Components/useTitle";
 
 export default function BookDetails() {
   const { bookId } = useParams();
@@ -18,6 +19,7 @@ export default function BookDetails() {
   }, [onRender, token, bookId]);
 
   console.log(response);
+  useTitle(`Caleb's Book Store - ${response.title}`);
 
   return (
     <>
@@ -47,8 +49,12 @@ export default function BookDetails() {
               <p className="publishers">{response.publisher} - </p>
               <p className="publishDate"> {response.publishedDate}</p>
             </div>
-
-            <p className="pages">Pages: {response.printedPageCount}</p>
+            <div className="info">
+              {response.categories && (
+                <p>{response.categories[0]} -</p>
+              )}
+              <p>Pages: {response.printedPageCount}</p>
+            </div>
             <p className="description">{response.description}</p>
 
             <a href={response.previewLink} target="blank" className="link">

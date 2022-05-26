@@ -28,11 +28,18 @@
 
     .authors {
       display: flex;
-      padding-right: 1em;
       font-style: italic;
 
       p {
         padding-right: 0.5em;
+      }
+    }
+
+    .info {
+      padding-right: 1em;
+    
+      p {
+          padding-right: 0.5em;
       }
     }
 
