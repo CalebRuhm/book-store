@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import { bookDetailsStore } from "../Stores/bookDetailsStore";
 import { loginStore } from "../Stores/loginStore";
 import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 export default function BookDetails() {
   const { bookId } = useParams();
@@ -33,15 +35,26 @@ export default function BookDetails() {
           <div className="details">
             <h1 className="title">{response.title}</h1>
             <h2 className="subtitle">{response.subtitle}</h2>
-              <p className="authors">{response.authors}</p>
+            {response.authors && (
+              <div className="authors">
+                {response.authors.map((newAuthor, idx) => (
+                  <p key={idx}>{newAuthor}</p>
+                ))}
+              </div>
+            )}
+
             <div className="published">
-              <p className="publishers">{response.publisher}</p>
-              <p className="publishDate">{response.publishedDate}</p>
+              <p className="publishers">{response.publisher} - </p>
+              <p className="publishDate"> {response.publishedDate}</p>
             </div>
-              <p className="pages">{response.printedPageCount} pages</p>
+
+            <p className="pages">Pages: {response.printedPageCount}</p>
             <p className="description">{response.description}</p>
 
-            <p className="link">{response.previewLink}</p>
+            <a href={response.previewLink} target="blank" className="link">
+              <FontAwesomeIcon icon={faCartShopping} className="bookIcon" />
+            </a>
+
             <form onSubmit={null}>
               <label htmlFor="bookShelf" />
               <select
@@ -58,7 +71,6 @@ export default function BookDetails() {
           </div>
         </div>
       </div>
-      ;
     </>
   );
 }

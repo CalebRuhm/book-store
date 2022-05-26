@@ -1,8 +1,69 @@
 @import "master";
 
 .book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  .container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    width: 85vw;
+    margin: 2em;
+
+    .title {
+      font-size: 2em;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .img {
+      margin: 2em;
+      width: 250px;
+      border: 0.25em solid #fff;
+    }
+
+    .authors {
+      display: flex;
+      padding-right: 1em;
+      font-style: italic;
+
+      p {
+        padding-right: 0.5em;
+      }
+    }
+
+    .published {
+      display: flex;
+    }
+
+    a {
+      font-size: 2em;
+      color: $yellow;
+      text-decoration: none;
+      transition: 0.2s ease;
+
+      &:hover {
+        color: $green;
+        transition: 0.2s ease;
+      }
+    }
+  }
+
+  select {
+    margin-top: 1em;
+    background-color: $grey;
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.4em;
+    outline: none;
     color: #fff;
+
+    &:focus {
+      outline: 0.2em solid $yellow;
+    }
+  }
 }

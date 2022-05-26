@@ -16,6 +16,7 @@
 
     img {
       margin: 2em;
+      border: 0.25em solid #fff;
     }
   }
 
@@ -29,6 +30,16 @@
       text-decoration-color: $yellow;
     }
   }
+
+  .authors {
+    display: flex;
+    padding-right: 1em;
+    font-style: italic;
+
+    p {
+        padding-right: 0.5em;
+    }
+}
 
   .subtitle {
     font-size: 1.4em;

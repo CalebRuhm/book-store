@@ -17,8 +17,6 @@ export default function BookShelf() {
     onRender(token);
   }, [onRender, token]);
 
-;
-
   return (
     <>
       <NavBar />
@@ -35,11 +33,20 @@ export default function BookShelf() {
               )}
 
               <div className="bookInfo">
-                <Link className="title" to={{pathname: `/book/${newData.id}`}} >
+                <Link
+                  className="title"
+                  to={{ pathname: `/book/${newData.id}` }}
+                >
                   {newData.title}
                 </Link>
                 <h2 className="subtitle">{newData.subtitle}</h2>
-                <p className="author">{newData.authors}</p>
+                {newData.authors && (
+                  <div className="authors">
+                    {newData.authors.map((newAuthor, idx) => (
+                      <p key={idx}>{newAuthor}</p>
+                    ))}
+                  </div>
+                )}
                 <p className="desc">{newData.description}</p>
                 <form onSubmit={null}>
                   <label htmlFor="bookShelf" />
