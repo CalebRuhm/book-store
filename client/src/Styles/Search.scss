@@ -14,7 +14,7 @@
     color: #fff;
     cursor: pointer;
     transition: 0.2s ease;
-    
+
     &:hover {
       transform: scale(1.2);
       transition: 0.2s ease;
@@ -72,6 +72,19 @@
   .bookInfo {
     .author {
       font-style: italic;
+    }
+  }
+
+  select {
+    background-color: $grey;
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.4em;
+    outline: none;
+    color: #fff;
+
+    &:focus {
+      outline: 0.2em solid $yellow;
     }
   }
 }

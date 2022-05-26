@@ -14,6 +14,7 @@ export default function Search() {
 
   const data = response;
   console.log(data);
+  console.log(response);
 
   return (
     <>
@@ -35,18 +36,23 @@ export default function Search() {
         {data &&
           data.map((newData, idx) => (
             <div key={newData.id} className="book">
-              {newData.imageLinks.thumbnail && (
-                <img
-                  src={newData.imageLinks.thumbnail}
-                  alt={newData.title}
-                ></img>
-              )}
+              <img src={newData.imageLinks.thumbnail} alt={newData.title}></img>
+
               <div className="bookInfo">
-                <Link className="title" to="/book/:bookId">{newData.title}</Link>
+                <Link className="title" to="/book/:bookId">
+                  {newData.title}
+                </Link>
                 <h2 className="subtitle">{newData.subtitle}</h2>
                 <p className="author">{newData.authors}</p>
                 <p className="desc">{newData.description}</p>
-                <p>{newData.id}</p>
+                <form onSubmit={null}>
+                  <label for="bookShelf" />
+                  <select name="bookShelf" id="bookShelf" onChange={null}>
+                    <option value="wantToRead">Want to Read</option>
+                    <option value="currentlyReading">Currently Reading</option>
+                    <option value="read">Read</option>
+                  </select>
+                </form>
               </div>
             </div>
           ))}
