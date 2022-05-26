@@ -1,9 +1,56 @@
 @import "master";
 
-.shelf {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1em;
-  color: white;
+.currentlyReading {
+  border-bottom: 0.5em solid $yellow;
+  color: #fff;
+
+  h1 {
+    padding: 0em 1em;
+  }
+
+  .book {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 2em;
+
+    img {
+      margin: 2em;
+    }
+  }
+
+  .title {
+    font-size: 1.75em;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $yellow;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.4em;
+  }
+
+  .bookInfo {
+    .author {
+      font-style: italic;
+    }
+  }
+
+  select {
+    background-color: $grey;
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.4em;
+    outline: none;
+    color: #fff;
+
+    &:focus {
+      outline: 0.2em solid $yellow;
+    }
+  }
+
 }

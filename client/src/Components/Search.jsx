@@ -46,7 +46,7 @@ export default function Search() {
                 <p className="author">{newData.authors}</p>
                 <p className="desc">{newData.description}</p>
                 <form onSubmit={null}>
-                  <label for="bookShelf" />
+                  <label htmlFor="bookShelf" />
                   <select name="bookShelf" id="bookShelf" onChange={null}>
                     <option value="wantToRead">Want to Read</option>
                     <option value="currentlyReading">Currently Reading</option>
