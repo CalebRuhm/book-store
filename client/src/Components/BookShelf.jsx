@@ -27,7 +27,12 @@ export default function BookShelf() {
         {currentlyReading &&
           currentlyReading.map((newData, idx) => (
             <div key={newData.id} className="book">
-              <img src={newData.imageLinks.thumbnail} alt={newData.title}></img>
+              {newData.imageLinks && (
+                <img
+                  src={newData.imageLinks.thumbnail}
+                  alt={newData.title}
+                ></img>
+              )}
 
               <div className="bookInfo">
                 <Link className="title" to="/book/:bookId">
@@ -38,12 +43,18 @@ export default function BookShelf() {
                 <p className="desc">{newData.description}</p>
                 <form onSubmit={null}>
                   <label htmlFor="bookShelf" />
-                  <select name="bookShelf" id="bookShelf" onChange={null} value={newData.shelf}>
+                  <select
+                    name="bookShelf"
+                    id="bookShelf"
+                    onChange={null}
+                    value={newData.shelf}
+                  >
                     <option value="wantToRead">Want to Read</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="read">Read</option>
                   </select>
                 </form>
+                )}
               </div>
             </div>
           ))}

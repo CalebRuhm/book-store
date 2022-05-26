@@ -36,7 +36,12 @@ export default function Search() {
         {data &&
           data.map((newData, idx) => (
             <div key={newData.id} className="book">
-              <img src={newData.imageLinks.thumbnail} alt={newData.title}></img>
+              {newData.imageLinks && (
+                <img
+                  src={newData.imageLinks.thumbnail}
+                  alt={newData.title}
+                ></img>
+              )}
 
               <div className="bookInfo">
                 <Link className="title" to="/book/:bookId">
@@ -47,7 +52,12 @@ export default function Search() {
                 <p className="desc">{newData.description}</p>
                 <form onSubmit={null}>
                   <label htmlFor="bookShelf" />
-                  <select name="bookShelf" id="bookShelf" value={newData.shelf}onChange={null}>
+                  <select
+                    name="bookShelf"
+                    id="bookShelf"
+                    value={newData.shelf}
+                    onChange={null}
+                  >
                     <option value="wantToRead">Want to Read</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="read">Read</option>
