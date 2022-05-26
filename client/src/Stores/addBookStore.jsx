@@ -4,7 +4,7 @@ import axios from "axios";
 export const addBookStore = create((set) => ({
   selectData: "",
   selectResponse: [],
-  handleSelect: (e) => {
+  handleSelect: (e, selectData, bookId, token) => {
     set({
       selectData: e.target.value,
     });

@@ -66,7 +66,7 @@ export default function Search() {
                   </div>
                 )}
                 <p className="desc">{newData.description}</p>
-                <form onChange={() => handleSelectChange(selectData, newData.id, token)}>
+                <form onSubmit={() => handleSelectChange(selectData, newData.id, token)}>
                   <label htmlFor="bookShelf" />
                   <select
                     name="bookShelf"
