@@ -38,7 +38,7 @@ export default function BookShelf() {
                 <p className="desc">{newData.description}</p>
                 <form onSubmit={null}>
                   <label htmlFor="bookShelf" />
-                  <select name="bookShelf" id="bookShelf" onChange={null}>
+                  <select name="bookShelf" id="bookShelf" onChange={null} value={newData.shelf}>
                     <option value="wantToRead">Want to Read</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="read">Read</option>
