@@ -13,8 +13,13 @@ export default function BookShelf() {
   const { onRender, response, currentlyReading, wantToRead, read } =
     bookShelfStore((state) => state);
   const { token } = loginStore((state) => state);
-  const { selectData, selectResponse, handleSelect, handleSelectChange } =
-    addBookStore((state) => state);
+  const {
+    selectData,
+    selectResponse,
+    deleteResponse,
+    handleSelect,
+    handleSelectChange,
+  } = addBookStore((state) => state);
 
   useEffect(() => {
     onRender(token);
@@ -22,6 +27,7 @@ export default function BookShelf() {
 
   console.log(selectData);
   console.log(selectResponse);
+  console.log(deleteResponse);
 
   return (
     <>

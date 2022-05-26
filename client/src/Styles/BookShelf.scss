@@ -3,6 +3,8 @@
 .currentlyReading, .wantToRead, .read {
   border-bottom: 0.5em solid $yellow;
   color: #fff;
+  @include flexCenter();
+  flex-direction: column;
 
   h1 {
     padding: 0em 1em;
@@ -12,6 +14,7 @@
     @include flexCenter();
     flex-direction: row;
     padding: 2em;
+    max-width: 75vw;
 
     img {
       margin: 2em;
