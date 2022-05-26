@@ -17,7 +17,7 @@ export default function BookShelf() {
     onClick(token);
   }, [onClick, token]);
 
-  console.log(response);
+;
 
   return (
     <>
@@ -35,7 +35,7 @@ export default function BookShelf() {
               )}
 
               <div className="bookInfo">
-                <Link className="title" to="/book/:bookId">
+                <Link className="title" to={{pathname: `/book/${newData.id}`}} >
                   {newData.title}
                 </Link>
                 <h2 className="subtitle">{newData.subtitle}</h2>
@@ -54,7 +54,6 @@ export default function BookShelf() {
                     <option value="read">Read</option>
                   </select>
                 </form>
-                )}
               </div>
             </div>
           ))}

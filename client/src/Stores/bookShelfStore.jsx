@@ -6,11 +6,11 @@ export const bookShelfStore = create((set) => ({
   currentlyReading: [],
   wantToRead: [],
   read: [],
-  onClick: async (newToken) => {
+  onClick: async (token) => {
     const response = await axios(`/api/bookshelf`, {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${newToken}`,
+        Authorization: `Bearer ${token}`,
       },
     });
     set({

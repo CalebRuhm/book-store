@@ -44,7 +44,7 @@ export default function Search() {
               )}
 
               <div className="bookInfo">
-                <Link className="title" to="/book/:bookId">
+              <Link className="title" to={{pathname: `/book/${newData.id}`}} >
                   {newData.title}
                 </Link>
                 <h2 className="subtitle">{newData.subtitle}</h2>
