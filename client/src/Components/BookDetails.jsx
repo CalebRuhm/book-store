@@ -21,8 +21,44 @@ export default function BookDetails() {
     <>
       <NavBar />
       <div className="book">
-        <h1>{response.title}</h1>
-      </div>;
+        <div className="container">
+          <div className="img">
+            {response.imageLinks && (
+              <img
+                src={response.imageLinks.thumbnail}
+                alt={response.title}
+              ></img>
+            )}
+          </div>
+          <div className="details">
+            <h1 className="title">{response.title}</h1>
+            <h2 className="subtitle">{response.subtitle}</h2>
+              <p className="authors">{response.authors}</p>
+            <div className="published">
+              <p className="publishers">{response.publisher}</p>
+              <p className="publishDate">{response.publishedDate}</p>
+            </div>
+              <p className="pages">{response.printedPageCount} pages</p>
+            <p className="description">{response.description}</p>
+
+            <p className="link">{response.previewLink}</p>
+            <form onSubmit={null}>
+              <label htmlFor="bookShelf" />
+              <select
+                name="bookShelf"
+                id="bookShelf"
+                value={response.shelf}
+                onChange={null}
+              >
+                <option value="wantToRead">Want to Read</option>
+                <option value="currentlyReading">Currently Reading</option>
+                <option value="read">Read</option>
+              </select>
+            </form>
+          </div>
+        </div>
+      </div>
+      ;
     </>
   );
 }
