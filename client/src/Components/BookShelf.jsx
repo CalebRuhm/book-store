@@ -10,24 +10,19 @@ import { Link } from "react-router-dom";
 export default function BookShelf() {
   useTitle(`Caleb's Book Store - Bookshelf`);
 
-  const { onRender, response, currentlyReading, wantToRead, read } =
-    bookShelfStore((state) => state);
+  const { onRender, currentlyReading, wantToRead, read } = bookShelfStore(
+    (state) => state
+  );
   const { token } = loginStore((state) => state);
-  const {
-    selectData,
-    selectResponse,
-    deleteResponse,
-    handleSelect,
-    handleSelectChange,
-  } = addBookStore((state) => state);
+  const { handleSubmit, handleChange, changeData } = addBookStore(
+    (state) => state
+  );
 
   useEffect(() => {
     onRender(token);
-  }, [onRender, token]);
+  }, [onRender, token, changeData]);
 
-  console.log(selectData);
-  console.log(selectResponse);
-  console.log(deleteResponse);
+  console.log(changeData);
 
   return (
     <>
@@ -60,16 +55,12 @@ export default function BookShelf() {
                   </div>
                 )}
                 <p className="desc">{newData.description}</p>
-                <form
-                  onChange={() =>
-                    handleSelectChange(selectData, newData.id, token)
-                  }
-                >
+                <form onSubmit={(e) => handleSubmit(e)}>
                   <label htmlFor="bookShelf" />
                   <select
                     name="bookShelf"
                     id="bookShelf"
-                    onChange={(e) => handleSelect(e)}
+                    onChange={(e) => handleChange(e, newData.id, token)}
                     value={newData.shelf}
                   >
                     <option value="wantToRead">Want to Read</option>
@@ -110,16 +101,12 @@ export default function BookShelf() {
                   </div>
                 )}
                 <p className="desc">{newData.description}</p>
-                <form
-                  onChange={() =>
-                    handleSelectChange(selectData, newData.id, token)
-                  }
-                >
+                <form onSubmit={(e) => handleSubmit(e)}>
                   <label htmlFor="bookShelf" />
                   <select
                     name="bookShelf"
                     id="bookShelf"
-                    onChange={(e) => handleSelect(e)}
+                    onChange={(e) => handleChange(e, newData.id, token)}
                     value={newData.shelf}
                   >
                     <option value="wantToRead">Want to Read</option>
@@ -160,16 +147,12 @@ export default function BookShelf() {
                   </div>
                 )}
                 <p className="desc">{newData.description}</p>
-                <form
-                  onChange={() =>
-                    handleSelectChange(selectData, newData.id, token)
-                  }
-                >
+                <form onSubmit={(e) => handleSubmit(e)}>
                   <label htmlFor="bookShelf" />
                   <select
                     name="bookShelf"
                     id="bookShelf"
-                    onChange={(e) => handleSelect(e)}
+                    onChange={(e) => handleChange(e, newData.id, token)}
                     value={newData.shelf}
                   >
                     <option value="wantToRead">Want to Read</option>
