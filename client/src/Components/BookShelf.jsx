@@ -155,8 +155,8 @@ export default function BookShelf() {
                     onChange={(e) => handleChange(e, newData.id, token)}
                     value={newData.shelf}
                   >
-                    <option value="wantToRead">Want to Read</option>
                     <option value="currentlyReading">Currently Reading</option>
+                    <option value="wantToRead">Want to Read</option>
                     <option value="read">Read</option>
                     <option value="remove">Remove</option>
                   </select>

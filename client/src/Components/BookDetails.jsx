@@ -8,17 +8,18 @@ import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { useTitle } from "../Components/useTitle";
+import { addBookStore } from "../Stores/addBookStore";
 
 export default function BookDetails() {
   const { bookId } = useParams();
   const { onRender, response } = bookDetailsStore((state) => state);
   const { token } = loginStore((state) => state);
+  const { handleChange, handleSubmit } = addBookStore((state) => state);
 
   useEffect(() => {
     onRender(token, bookId);
   }, [onRender, token, bookId]);
 
-  console.log(response);
   useTitle(`Caleb's Book Store - ${response.title}`);
 
   return (
@@ -50,9 +51,7 @@ export default function BookDetails() {
               <p className="publishDate"> {response.publishedDate}</p>
             </div>
             <div className="info">
-              {response.categories && (
-                <p>{response.categories[0]} -</p>
-              )}
+              {response.categories && <p>{response.categories[0]} -</p>}
               <p>Pages: {response.printedPageCount}</p>
             </div>
             <p className="description">{response.description}</p>
@@ -61,16 +60,17 @@ export default function BookDetails() {
               <FontAwesomeIcon icon={faCartShopping} className="bookIcon" />
             </a>
 
-            <form onSubmit={null}>
+            <form onSubmit={(e) => handleSubmit(e)}>
               <label htmlFor="bookShelf" />
               <select
                 name="bookShelf"
                 id="bookShelf"
+                onChange={(e) => handleChange(e, response.id, token)}
                 value={response.shelf}
-                onChange={null}
               >
-                <option value="wantToRead">Want to Read</option>
+                <option value="none">None</option>
                 <option value="currentlyReading">Currently Reading</option>
+                <option value="wantToRead">Want to Read</option>
                 <option value="read">Read</option>
               </select>
             </form>

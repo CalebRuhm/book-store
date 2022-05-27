@@ -5,21 +5,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { searchStore } from "../Stores/searchStore";
 import { addBookStore } from "../Stores/addBookStore";
-import {loginStore} from "../Stores/loginStore";
+import { loginStore } from "../Stores/loginStore";
 import { Link } from "react-router-dom";
 
 export default function Search() {
   useTitle(`Caleb's Book Store - Search`);
-  const { handleSearch, handleSearchChange, searchData, response } = searchStore(
-    (state) => state
-  );
+  const { handleSearch, handleSearchChange, searchData, response } =
+    searchStore((state) => state);
   const data = response;
 
-  const { handleChange,  handleSubmit } =
-    addBookStore((state) => state);
+  const { handleChange, handleSubmit } = addBookStore((state) => state);
 
   const { token } = loginStore((state) => state);
-
 
   return (
     <>
@@ -73,8 +70,8 @@ export default function Search() {
                     value={newData.shelf}
                   >
                     <option value="none">None</option>
-                    <option value="wantToRead">Want to Read</option>
                     <option value="currentlyReading">Currently Reading</option>
+                    <option value="wantToRead">Want to Read</option>
                     <option value="read">Read</option>
                   </select>
                 </form>
