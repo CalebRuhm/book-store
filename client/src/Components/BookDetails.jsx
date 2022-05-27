@@ -50,10 +50,9 @@ export default function BookDetails() {
               <p className="publishers">{response.publisher} - </p>
               <p className="publishDate"> {response.publishedDate}</p>
             </div>
-            <div className="info">
-              {response.categories && <p>{response.categories[0]} -</p>}
-              <p>Pages: {response.printedPageCount}</p>
-            </div>
+
+            {response.categories && <p>{response.categories[0]}</p>}
+            <p>Pages: {response.printedPageCount}</p>
             <p className="description">{response.description}</p>
 
             <a href={response.previewLink} target="blank" className="link">

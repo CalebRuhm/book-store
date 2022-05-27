@@ -14,21 +14,19 @@ export default function BookShelf() {
     (state) => state
   );
   const { token } = loginStore((state) => state);
-  const { handleSubmit, handleChange, changeData } = addBookStore(
+  const { handleSubmit, handleChange, changeData, remove } = addBookStore(
     (state) => state
   );
 
   useEffect(() => {
     onRender(token);
-  }, [onRender, token, changeData]);
-
-  console.log(changeData);
+  }, [onRender, token, changeData, remove]);
+  console.log(remove)
 
   return (
     <>
       <NavBar />
       <div className="currentlyReading">
-        <h1>Currently Reading:</h1>
         {currentlyReading &&
           currentlyReading.map((newData, idx) => (
             <div key={newData.id} className="book">
@@ -54,7 +52,6 @@ export default function BookShelf() {
                     ))}
                   </div>
                 )}
-                <p className="desc">{newData.description}</p>
                 <form onSubmit={(e) => handleSubmit(e)}>
                   <label htmlFor="bookShelf" />
                   <select
@@ -74,7 +71,6 @@ export default function BookShelf() {
           ))}
       </div>
       <div className="wantToRead">
-        <h1>Want to Read:</h1>
         {wantToRead &&
           wantToRead.map((newData, idx) => (
             <div key={newData.id} className="book">
@@ -100,7 +96,6 @@ export default function BookShelf() {
                     ))}
                   </div>
                 )}
-                <p className="desc">{newData.description}</p>
                 <form onSubmit={(e) => handleSubmit(e)}>
                   <label htmlFor="bookShelf" />
                   <select
@@ -120,7 +115,6 @@ export default function BookShelf() {
           ))}
       </div>
       <div className="read">
-        <h1>Read:</h1>
         {read &&
           read.map((newData, idx) => (
             <div key={newData.id} className="book">
@@ -146,7 +140,6 @@ export default function BookShelf() {
                     ))}
                   </div>
                 )}
-                <p className="desc">{newData.description}</p>
                 <form onSubmit={(e) => handleSubmit(e)}>
                   <label htmlFor="bookShelf" />
                   <select

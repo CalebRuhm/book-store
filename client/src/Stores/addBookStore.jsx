@@ -2,20 +2,19 @@ import create from "zustand";
 import axios from "axios";
 
 export const addBookStore = create((set) => ({
-  changeData: "",
   remove: "",
   handleSubmit: (e) => {
     e.preventDefault();
   },
   handleChange: async (e, id, token) => {
-    if (e.target.value === "remove") {
+    if (e.target.value === "Remove") {
       const response = await axios(`/api/bookshelf/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
-      set({ remove: response });
+      set({ remove: response.data });
     } else {
       await axios(`/api/bookshelf/${id}/${e.target.value}`, {
         method: "PUT",
