@@ -3,14 +3,12 @@
 .currentlyReading,
 .wantToRead,
 .read {
-  border-bottom: 0.5em solid $yellow;
   color: #fff;
   flex-direction: column;
   display: flex;
-  @include flexCenter; 
-
-
+  
   .book {
+    display: flex; 
     padding: 2em;
 
     img {

@@ -1,7 +1,6 @@
 @import "master";
 
 .book {
-  @include flexCenter();
   color: #fff;
 
   .container {
