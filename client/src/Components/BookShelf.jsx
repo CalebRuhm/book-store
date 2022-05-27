@@ -21,7 +21,8 @@ export default function BookShelf() {
   useEffect(() => {
     onRender(token);
   }, [onRender, token, changeData, remove]);
-  console.log(remove)
+
+  console.log(remove);
 
   return (
     <>

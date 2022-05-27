@@ -7,7 +7,7 @@ export const addBookStore = create((set) => ({
     e.preventDefault();
   },
   handleChange: async (e, id, token) => {
-    if (e.target.value === "Remove") {
+    if (e.target.value === "remove") {
       const response = await axios(`/api/bookshelf/${id}`, {
         method: "DELETE",
         headers: {
