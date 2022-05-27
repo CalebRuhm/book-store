@@ -4,7 +4,7 @@ import axios from "axios";
 export const searchStore = create((set) => ({
   searchData: "",
   response: [],
-  handleChange: (e) => {
+  handleSearchChange: (e) => {
     set({ searchData: e.target.value });
   },
   handleSearch: async (searchData) => {

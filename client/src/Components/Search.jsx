@@ -10,18 +10,16 @@ import { Link } from "react-router-dom";
 
 export default function Search() {
   useTitle(`Caleb's Book Store - Search`);
-  const { handleSearch, handleChange, searchData, response } = searchStore(
+  const { handleSearch, handleSearchChange, searchData, response } = searchStore(
     (state) => state
   );
   const data = response;
 
-  const { selectData, selectResponse, handleSelect, handleSelectChange } =
+  const { handleChange,  handleSubmit } =
     addBookStore((state) => state);
 
   const { token } = loginStore((state) => state);
 
-  console.log(selectData);
-  console.log(selectResponse);
 
   return (
     <>
@@ -34,7 +32,7 @@ export default function Search() {
         <input
           type="text"
           name="search"
-          onChange={(e) => handleChange(e)}
+          onChange={(e) => handleSearchChange(e)}
           placeholder="Harry Potter and the Prisoner of Azkaban"
         ></input>
       </div>
@@ -66,14 +64,13 @@ export default function Search() {
                   </div>
                 )}
                 <p className="desc">{newData.description}</p>
-                <form>
-                {/* <form onSubmit={(e) => handleSelectChange(selectData, newData.id, token)}> */}
+                <form onSubmit={(e) => handleSubmit(e)}>
                   <label htmlFor="bookShelf" />
                   <select
                     name="bookShelf"
                     id="bookShelf"
+                    onChange={(e) => handleChange(e, newData.id, token)}
                     value={newData.shelf}
-                    onChange={(e) => handleSelect(e)}
                   >
                     <option value="none">None</option>
                     <option value="wantToRead">Want to Read</option>
