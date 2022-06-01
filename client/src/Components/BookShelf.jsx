@@ -22,8 +22,6 @@ export default function BookShelf() {
     onRender(token);
   }, [onRender, token, changeData, remove]);
 
-  console.log(remove);
-
   return (
     <>
       <NavBar />
