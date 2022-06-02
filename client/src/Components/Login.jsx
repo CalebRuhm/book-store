@@ -15,6 +15,12 @@ export default function Login() {
     usernameInput,
     passwordInput,
     token,
+    onBlurUser,
+    onBlurPass,
+    blurUser,
+    blurPass,
+    validate,
+    loginValidate
   } = loginStore((state) => state);
 
   return token ? (
@@ -33,20 +39,27 @@ export default function Login() {
           name="username"
           value={usernameInput}
           onChange={(e) => onChangeUser(e)}
-          // onBlur={}
+          onBlur={() => onBlurUser(usernameInput)}
         ></input>
+        {blurUser && <p className="error">Please enter a username</p>}
         <label htmlFor="password">Password:</label>
         <input
           type="password"
           name="password"
           value={passwordInput}
           onChange={(e) => onChangePass(e)}
+          onBlur={() => onBlurPass(passwordInput)}
         ></input>
+        {blurPass && <p className="error">Please enter a password</p>}
+        {validate && (
+          <p className="error">Please enter a username and password</p>
+        )}
+      {loginValidate && <p className="error">Please enter a valid username and password</p>}
       </form>
       <button
         className="btn"
         onClick={() => onClick(usernameInput, passwordInput)}
-      >
+        >
         Login
       </button>
     </div>

@@ -33,6 +33,12 @@
         outline: 0.3em solid $green;
       }
     }
+
+    .error {
+      color: red;
+      font-size: 0.75em;
+      letter-spacing: 0.05em;
+    }
   }
 
   .btn {
